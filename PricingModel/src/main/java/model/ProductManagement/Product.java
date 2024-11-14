@@ -19,7 +19,8 @@ public class Product {
     private int ceilingPrice;
     private int targetPrice;
     ArrayList<OrderItem> orderitems;
-        public Product( int fp, int cp, int tp) {
+    
+    public Product( int fp, int cp, int tp) {
 
         floorPrice = fp;
         ceilingPrice = cp;
