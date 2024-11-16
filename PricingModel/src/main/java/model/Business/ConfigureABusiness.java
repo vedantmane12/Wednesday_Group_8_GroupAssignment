@@ -43,6 +43,10 @@ public class ConfigureABusiness {
     Supplier supplier4 = supplierDirectory.newSupplier("D");
     Supplier supplier5 = supplierDirectory.newSupplier("E");
 
+    
+
+        
+
     ProductCatalog productCatalogA = supplierDirectory.findSupplier("A").getProductCatalog();
     ProductCatalog productCatalogB = supplierDirectory.findSupplier("B").getProductCatalog();
     ProductCatalog productCatalogC = supplierDirectory.findSupplier("C").getProductCatalog();
@@ -103,6 +107,10 @@ public class ConfigureABusiness {
     Product pE8 = productCatalogE.newProduct("Product E8", 8, 18, 13);
     Product pE9 = productCatalogE.newProduct("Product E9", 10, 20, 15);
     Product pE10 = productCatalogE.newProduct("Product E10", 5, 15, 10);
+
+    
+
+    
 
     PersonDirectory personDirectory = business.getPersonDirectory();
     
@@ -651,6 +659,12 @@ public class ConfigureABusiness {
     OrderItem oiC1049 = o10.newOrderItem(pE9, 19, 4);
     OrderItem oiC1050 = o10.newOrderItem(pE10, 14, 3);
 
+
+    
+    ProductCatalog pdA = supplierDirectory.findSupplier("B").getProductCatalog();
+    
+
     return business;
+
   }
 }

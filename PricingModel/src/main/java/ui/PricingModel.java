@@ -18,6 +18,8 @@ import model.ProductManagement.Product;
 import model.ProductManagement.ProductCatalog;
 import model.Supplier.Supplier;
 import model.Supplier.SupplierDirectory;
+import ui.AdminWorkArea.AdminWorkArea;
+import ui.AdminWorkArea.ManageSupplier;
 
 /**
  *
@@ -30,14 +32,12 @@ public class PricingModel {
    */
   public static void main(String[] args) {
     // TODO code application logic here
+    
     Business business = ConfigureABusiness.initialize();
+     
+    //System.out.println(business.getSupplierDirectory().findSupplier("A").getProductCatalog().generatProductPerformanceReport());
     
-    //Browse Product Price Performance
-    System.out.println(business.getSupplierDirectory().findSupplier("A").prepareProductsReport().getTopProductAboveTarget().getProductPricePerformance());
-    
-    //Generate Final Product Performance Report
-    
-    
+
   }
 
 }
