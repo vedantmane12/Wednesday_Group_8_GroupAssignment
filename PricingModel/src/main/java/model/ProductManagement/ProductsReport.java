@@ -49,5 +49,17 @@ public class ProductsReport {
 
         return productsalwaysabovetarget;
     }
+    
+        // Override toString()
+    @Override
+    public String toString() {
+    StringBuilder sb = new StringBuilder("ProductsReport{\n");
+     for (ProductSummary ps : productsummarylist) {
+        sb.append(ps.toString()).append("\n");
+     }
+    sb.append("}");
+    return sb.toString();
+}
+
 
 }
