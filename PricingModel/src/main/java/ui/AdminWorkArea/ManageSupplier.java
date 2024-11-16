@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import model.Business.Business;
 import model.ProductManagement.Product;
 import model.ProductManagement.ProductCatalog;
+import model.ProductManagement.ProductSummary;
 import model.Supplier.Supplier;
 
 /**
@@ -25,9 +26,12 @@ public class ManageSupplier extends javax.swing.JPanel {
      * Creates new form ManageSupplier
      */
     public ManageSupplier( JPanel userProcessContainer,Business business ) {
-        initComponents();
         this.userProcessContainer = userProcessContainer ;
         this.business = business; 
+        initComponents();
+        
+        initializeTable();
+
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,7 +41,7 @@ public class ManageSupplier extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     
     
-       public void initializeTable() {
+    public void initializeTable() {
 
 //clear supplier table
         SupplierCombobox.removeAllItems();
@@ -323,14 +327,14 @@ public class ManageSupplier extends javax.swing.JPanel {
         }
         
            
-//        ProductSummary productsummary = new ProductSummary(selectedproduct);
-//
-//        productNameTextField.setText(selectedproduct.toString());
-//        String revenues = String.valueOf(productsummary.getSalesRevenues());
-//        productRevenueTextField.setText(revenues);
-//        productFrequencyAboveTargetTextField.setText( String.valueOf(productsummary.getNumberAboveTarget()));
-//        productFrequencyBelowTargetTextField.setText( String.valueOf(productsummary.getNumberBelowTarget()));
-//        productPricePerformanceTextField.setText(String.valueOf(productsummary.getProductPricePerformance()));
+        ProductSummary productsummary = new ProductSummary(selectedProduct);
+
+        txtProdNames.setText(selectedProduct.toString());
+        String revenues = String.valueOf(productsummary.getSalesRevenues());
+        productRevenueTextField.setText(revenues);
+        txtOrders.setText( String.valueOf(productsummary.getNumberAboveTarget()));
+        productFrequencyBelowTargetTextField.setText( String.valueOf(productsummary.getNumberBelowTarget()));
+        productPricePerformanceTextField.setText(String.valueOf(productsummary.getProductPricePerformance()));
 
     }//GEN-LAST:event_tblSupplierCatalogMousePressed
 
@@ -359,6 +363,8 @@ public class ManageSupplier extends javax.swing.JPanel {
 
     private void SupplierComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SupplierComboboxActionPerformed
         // TODO add your handling code here:
+           refreshTable();
+
     }//GEN-LAST:event_SupplierComboboxActionPerformed
 
 

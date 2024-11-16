@@ -6,6 +6,7 @@ package ui;
 
 import java.awt.CardLayout;
 import model.Business.Business;
+import model.Business.ConfigureABusiness;
 import ui.AdminWorkArea.AdminWorkArea;
 
 /**
@@ -21,6 +22,7 @@ public class PMainFrame extends javax.swing.JFrame {
     
     public PMainFrame() {
         initComponents();
+        business = ConfigureABusiness.initialize() ;
     }
 
     /**
