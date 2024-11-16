@@ -35,9 +35,7 @@ public class PricingModel {
     //Browse Product Price Performance
     System.out.println(business.getSupplierDirectory().findSupplier("A").prepareProductsReport().getTopProductAboveTarget().getProductPricePerformance());
     
-    
     //Generate Final Product Performance Report
-    
     
     
   }
