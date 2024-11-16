@@ -4,6 +4,9 @@
  */
 package ui.SalesWorkArea;
 
+import javax.swing.JPanel;
+import model.Supplier.SupplierDirectory;
+
 /**
  *
  * @author Tanmay Paawar
@@ -13,8 +16,15 @@ public class ProcessOrder extends javax.swing.JPanel {
     /**
      * Creates new form ProcessOrder
      */
-    public ProcessOrder() {
+    JPanel CardSequencePanel;
+    SupplierDirectory supplierDirectory ; 
+
+            
+            
+    public ProcessOrder(JPanel CardSequencePanel, SupplierDirectory supplierDirectory ) {
         initComponents();
+        this.CardSequencePanel = CardSequencePanel;
+        this.supplierDirectory = supplierDirectory;
     }
 
     /**
