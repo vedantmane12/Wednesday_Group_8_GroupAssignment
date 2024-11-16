@@ -44,4 +44,12 @@ public class ProductSummary {
     public boolean isProductAlwaysAboveTarget(){
         return false; // to be implemented
     }
+    
+     @Override
+    public String toString() {
+        return "ProductSummary{" +
+                "salesAboveTarget='" + numberofsalesabovetarget  +
+                ", salesBelowTarget=" + numberofsalesbelowtarget +
+                '}';
+    }
 }
