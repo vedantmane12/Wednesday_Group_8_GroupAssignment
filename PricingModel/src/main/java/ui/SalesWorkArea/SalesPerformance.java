@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package ui.AdminWorkArea;
+package ui.SalesWorkArea;
 
 /**
  *
  * @author Tanmay Paawar
  */
-public class PerformanceReportWorkArea extends javax.swing.JPanel {
+public class SalesPerformance extends javax.swing.JPanel {
 
     /**
-     * Creates new form PerformanceReportWorkArea
+     * Creates new form SalesPerformance
      */
-    public PerformanceReportWorkArea() {
+    public SalesPerformance() {
         initComponents();
     }
 
@@ -26,9 +26,6 @@ public class PerformanceReportWorkArea extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Back = new javax.swing.JButton();
-        customerNamejCombo = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
         productNameTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         productRevenueTextField = new javax.swing.JTextField();
@@ -38,21 +35,8 @@ public class PerformanceReportWorkArea extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
         Back1 = new javax.swing.JButton();
-
-        Back.setText("<< Back");
-        Back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackActionPerformed(evt);
-            }
-        });
-
-        customerNamejCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customerNamejComboActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Target sales revenue");
+        customerNamejCombo = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         productNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,12 +90,20 @@ public class PerformanceReportWorkArea extends javax.swing.JPanel {
             }
         });
 
+        customerNamejCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                customerNamejComboActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Target sales revenue");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(43, Short.MAX_VALUE)
                 .addComponent(Back1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -159,14 +151,9 @@ public class PerformanceReportWorkArea extends javax.swing.JPanel {
                 .addComponent(customerNamejCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void customerNamejComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerNamejComboActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_customerNamejComboActionPerformed
 
     private void productNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productNameTextFieldActionPerformed
         // TODO add your handling code here:
@@ -180,18 +167,17 @@ public class PerformanceReportWorkArea extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_productRevenueTextField1ActionPerformed
 
-    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
-       
-    }//GEN-LAST:event_BackActionPerformed
-
     private void Back1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back1ActionPerformed
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_Back1ActionPerformed
+
+    private void customerNamejComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerNamejComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_customerNamejComboActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Back;
     private javax.swing.JButton Back1;
     private javax.swing.JComboBox<String> customerNamejCombo;
     private javax.swing.JLabel jLabel1;

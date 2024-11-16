@@ -19,6 +19,7 @@ import model.ProductManagement.Product;
 import model.ProductManagement.ProductCatalog;
 import model.Supplier.Supplier;
 import model.Supplier.SupplierDirectory;
+import ui.AdminWorkArea.ManageSupplier;
 
 /**
  *
@@ -32,9 +33,11 @@ public class PricingModel {
   public static void main(String[] args) {
     // TODO code application logic here
     
-     Business business = ConfigureABusiness.initialize();
+    Business business = ConfigureABusiness.initialize();
      
-     System.out.println(business.getSupplierDirectory().findSupplier("A").getProductCatalog().generatProductPerformanceReport());
+    //System.out.println(business.getSupplierDirectory().findSupplier("A").getProductCatalog().generatProductPerformanceReport());
+    
+    System.out.println(business.getCustomerDirectory().getCustomerList());
     
   }
 
