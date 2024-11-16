@@ -108,7 +108,7 @@ public class AdminWorkArea extends javax.swing.JPanel {
         // TODO add your handling code here:
 
         ManageSupplier iet = new ManageSupplier(CardSequencePanel, business);
-        CardSequencePanel.add("FindResourceAsset", iet);
+        CardSequencePanel.add("ManageSupplier", iet);
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnManageSupplierActionPerformed
 
