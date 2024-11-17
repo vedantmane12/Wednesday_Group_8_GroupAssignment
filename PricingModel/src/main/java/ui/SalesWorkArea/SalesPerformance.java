@@ -4,17 +4,32 @@
  */
 package ui.SalesWorkArea;
 
+import java.util.ArrayList;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import model.Business.Business;
+import model.ProductManagement.Product;
+import model.ProductManagement.ProductCatalog;
+import model.Supplier.Supplier;
+
 /**
  *
  * @author Tanmay Paawar
  */
 public class SalesPerformance extends javax.swing.JPanel {
+    JPanel userProcessContainer;
+    Business business ;
+    Product selectedProduct;
+    Supplier selectedSupplier; 
 
     /**
      * Creates new form SalesPerformance
      */
-    public SalesPerformance() {
+    public SalesPerformance(JPanel userProcessContainer,Business business) {
+        this.userProcessContainer = userProcessContainer ;
+        this.business = business; 
         initComponents();
+        populateTable();
     }
 
     /**
@@ -102,12 +117,6 @@ public class SalesPerformance extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
-                .addComponent(Back1)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(124, 124, 124))
             .addGroup(layout.createSequentialGroup()
                 .addGap(159, 159, 159)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,19 +125,27 @@ public class SalesPerformance extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(customerNamejCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(productRevenueTextField1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(productRevenueTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(productNameTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(266, 266, 266))))
+                        .addGap(266, 266, 266))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Back1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(124, 124, 124))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,9 +155,9 @@ public class SalesPerformance extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(Back1))
                 .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(productNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(productNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -149,9 +166,9 @@ public class SalesPerformance extends javax.swing.JPanel {
                 .addComponent(productRevenueTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
                 .addComponent(customerNamejCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -174,6 +191,8 @@ public class SalesPerformance extends javax.swing.JPanel {
 
     private void customerNamejComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerNamejComboActionPerformed
         // TODO add your handling code here:
+        refreshTable();
+        
     }//GEN-LAST:event_customerNamejComboActionPerformed
 
 
@@ -190,4 +209,100 @@ public class SalesPerformance extends javax.swing.JPanel {
     private javax.swing.JTextField productRevenueTextField1;
     private javax.swing.JTable tblProducts;
     // End of variables declaration//GEN-END:variables
-}
+
+    private void populateTable() {
+        
+        //clear supplier table
+        customerNamejCombo.removeAllItems();
+
+        int rc = tblProducts.getRowCount();
+        int i;
+        for (i = rc - 1; i >= 0; i--) {
+            ((DefaultTableModel) tblProducts.getModel()).removeRow(i);
+        }
+//load suppliers to the combobox
+
+        ArrayList<Supplier> supplierlist = business.getSupplierDirectory().getSuplierList();
+
+        if (supplierlist.isEmpty()) {
+            return;
+        }
+        for (Supplier s : supplierlist) {
+            customerNamejCombo.addItem(s.toString());
+            customerNamejCombo.setSelectedIndex(0);
+
+            String suppliername = (String) customerNamejCombo.getSelectedItem();
+
+            selectedSupplier = business.getSupplierDirectory().findSupplier(suppliername);
+
+            ProductCatalog pc = selectedSupplier.getProductCatalog();
+
+            for (Product pt : pc.getProductList()) {
+
+                Object[] row = new Object[2];
+                row[0] = pt;
+                row[1] = pt.getTargetPrice();
+                
+               
+//                row[1] = pt.getPerformanceMeasure();
+//               row[2] = la.getName();
+                ((DefaultTableModel) tblProducts.getModel()).addRow(row);
+            }
+
+        }
+        
+        
+        
+        
+        
+//         String[] columnNames = {"Product Name", "Revenue"};
+//
+//        // Define sample data
+//        Object[][] data = {
+//            {"Product A", "$1000"},
+//            {"Product B", "$1500"},
+//            {"Product C", "$2000"},
+//            {"Product D", "$2500"}
+//        };
+//
+//         DefaultTableModel model = new DefaultTableModel(data, columnNames) {
+//            @Override
+//            public boolean isCellEditable(int row, int column) {
+//                // Make cells non-editable
+//                return false;
+//            }
+//        };
+//
+//        tblProducts.setModel(model);
+    }
+
+    private void refreshTable() {
+        int rc = tblProducts.getRowCount();
+        int i;
+        for (i = rc - 1; i >= 0; i--) {
+            ((DefaultTableModel) tblProducts.getModel()).removeRow(i);
+        }
+
+        String suppliername = (String) customerNamejCombo.getSelectedItem();
+
+        selectedSupplier = business.getSupplierDirectory().findSupplier(suppliername);
+        if (selectedSupplier == null) {
+            return;
+        }
+        ProductCatalog pc = selectedSupplier.getProductCatalog();
+
+        for (Product pt : pc.getProductList()) {
+
+            Object[] row = new Object[5];
+            row[0] = pt;
+            row[1] = pt.getTargetPrice();
+            //row[1] = pt.getFloorPrice();
+            
+//                row[1] = pt.getPerformanceMeasure();
+//               row[2] = la.getName();
+            ((DefaultTableModel) tblProducts.getModel()).addRow(row);
+        }
+    }
+        
+    }
+

@@ -72,9 +72,7 @@ public class ManageSupplier extends javax.swing.JPanel {
 
                 Object[] row = new Object[5];
                 row[0] = pt;
-                row[1] = pt.getFloorPrice();
-                row[2] = pt.getCeilingPrice();
-                row[3] = pt.getTargetPrice();
+                
 //                row[1] = pt.getPerformanceMeasure();
 //               row[2] = la.getName();
                 ((DefaultTableModel) tblSupplierCatalog.getModel()).addRow(row);

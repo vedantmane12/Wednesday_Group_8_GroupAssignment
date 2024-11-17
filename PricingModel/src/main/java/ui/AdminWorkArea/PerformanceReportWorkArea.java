@@ -4,16 +4,27 @@
  */
 package ui.AdminWorkArea;
 
+import javax.swing.JPanel;
+import model.Business.Business;
+import model.ProductManagement.Product;
+import model.Supplier.Supplier;
+
 /**
  *
  * @author Tanmay Paawar
  */
 public class PerformanceReportWorkArea extends javax.swing.JPanel {
+    JPanel userProcessContainer;
+    Business business ;
+    Product selectedProduct;
+    Supplier selectedSupplier; 
 
     /**
      * Creates new form PerformanceReportWorkArea
      */
-    public PerformanceReportWorkArea() {
+    public PerformanceReportWorkArea(JPanel userProcessContainer,Business business) {
+         this.userProcessContainer = userProcessContainer ;
+        this.business = business; 
         initComponents();
     }
 
@@ -186,6 +197,8 @@ public class PerformanceReportWorkArea extends javax.swing.JPanel {
 
     private void Back1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back1ActionPerformed
         // TODO add your handling code here:
+        
+        
        
     }//GEN-LAST:event_Back1ActionPerformed
 

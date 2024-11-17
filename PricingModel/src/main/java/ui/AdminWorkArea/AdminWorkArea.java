@@ -123,13 +123,10 @@ public class AdminWorkArea extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageCustomerActionPerformed
 
     private void btnCustomerReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerReportActionPerformed
-        // TODO add your handling code here:
-        //
-                CardSequencePanel.removeAll();
-//                  ManageIncidents aos = new  ManageIncidents(businessunit, CardSequencePanel);
-//                 aos.setAgenda(businessunit.getRiskManagementAgenda());
-//                        CardSequencePanel.add("RiskAgendaObjectives", aos);
-                ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+        
+        PerformanceReportWorkArea iet = new PerformanceReportWorkArea(CardSequencePanel, business);
+        CardSequencePanel.add("PerformanceReportWorkArea", iet);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnCustomerReportActionPerformed
 
 
