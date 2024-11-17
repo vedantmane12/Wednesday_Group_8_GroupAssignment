@@ -41,7 +41,7 @@ public class OrderItem {
     }
 
     public boolean isActualAboveTarget() {
-        if (actualPrice >= selectedproduct.getTargetPrice()) {
+        if (selectedproduct.avgActualPrice() > selectedproduct.getTargetPrice()) {
             return true;
         } else {
             return false;
@@ -49,7 +49,7 @@ public class OrderItem {
     }
 
     public boolean isActualBelowTarget() {
-        if (actualPrice < selectedproduct.getTargetPrice()) {
+        if (selectedproduct.avgActualPrice() < selectedproduct.getTargetPrice()) {
             return true;
         } else {
             return false;

@@ -73,8 +73,8 @@ public class SalesPerformanceJPanel extends javax.swing.JPanel {
                 row[2] = adjustedPrices.get(i);
                 model.addRow(row);
                 totalRevenue += summary.getSalesRevenues();
-                salesAboveTarget = summary.getNumberAboveTarget();
-                salesBelowTarget = summary.getNumberBelowTarget();
+                salesAboveTarget += summary.getNumberAboveTarget()/productList.size();
+                salesBelowTarget += summary.getNumberBelowTarget()/productList.size();
             }
 
              totalTarget = calculateTotalTargetPrice() ;
