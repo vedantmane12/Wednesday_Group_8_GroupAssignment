@@ -50,47 +50,45 @@ public class SalesPerformanceJPanel extends javax.swing.JPanel {
                      
     
     private void populateTable() {
-    DefaultTableModel model = (DefaultTableModel) tblProducts.getModel();
-    model.setRowCount(0);
-    
-    //Supplier supplier = business.getSupplierDirectory().findSupplier(selectedSupplier);
-    
-    if (supplier != null) {
-        productList = supplier.getProductCatalog().getProductList();
-        ArrayList<Integer> adjustedPrices = adjustTargetPrices(productList);
-//        adjustTargetPrices();
-        double totalRevenue = 0;
-        double totalTarget = 0 ;
-        int salesAboveTarget = 0;
-        int salesBelowTarget = 0;
-        double pl ;
-        
-        for (int i = 0; i < productList.size(); i++) {
-            Product product = productList.get(i);
-            ProductSummary summary = new ProductSummary(product);
-            Object[] row = new Object[3];
-            row[0] = product.toString();
-//            row[1] = summary.getSalesRevenues();
-            row[1] = summary.getTargetPrice();
-            row[2] = adjustedPrices.get(i);
-                model.addRow(row);
-            totalRevenue += summary.getSalesRevenues();
-            salesAboveTarget = summary.getNumberAboveTarget();
-            salesBelowTarget = summary.getNumberBelowTarget();
-        }
-        
-         totalTarget = calculateTotalTargetPrice() ;
-         
-         pl = totalRevenue - totalTarget ;
-         
-         productRevenueTextField.setText(String.valueOf(totalRevenue));
-         productNameTextField.setText(String.valueOf(totalTarget));
-         profitOrLoss.setText(String.valueOf(pl));
-         txtAboveTarget.setText(String.valueOf(salesAboveTarget));
-         txtBelowTarget.setText(String.valueOf(salesBelowTarget));
+        DefaultTableModel model = (DefaultTableModel) tblProducts.getModel();
+        model.setRowCount(0);
 
-         
-    } }
+        if (supplier != null) {
+            productList = supplier.getProductCatalog().getProductList();
+            ArrayList<Integer> adjustedPrices = adjustTargetPrices(productList);
+    //        adjustTargetPrices();
+            double totalRevenue = 0;
+            double totalTarget = 0 ;
+            int salesAboveTarget = 0;
+            int salesBelowTarget = 0;
+            double pl ;
+
+            for (int i = 0; i < productList.size(); i++) {
+                Product product = productList.get(i);
+                ProductSummary summary = new ProductSummary(product);
+                Object[] row = new Object[3];
+                row[0] = product.toString();
+    //            row[1] = summary.getSalesRevenues();
+                row[1] = summary.getTargetPrice();
+                row[2] = adjustedPrices.get(i);
+                model.addRow(row);
+                totalRevenue += summary.getSalesRevenues();
+                salesAboveTarget = summary.getNumberAboveTarget();
+                salesBelowTarget = summary.getNumberBelowTarget();
+            }
+
+             totalTarget = calculateTotalTargetPrice() ;
+
+             pl = totalRevenue - totalTarget ;
+
+             productRevenueTextField.setText(String.valueOf(totalRevenue));
+             productNameTextField.setText(String.valueOf(totalTarget));
+             profitOrLoss.setText(String.valueOf(pl));
+             txtAboveTarget.setText(String.valueOf(salesAboveTarget));
+             txtBelowTarget.setText(String.valueOf(salesBelowTarget));
+
+        } 
+    }
     
    private ArrayList<Integer> adjustTargetPrices(ArrayList<Product> productList) {
     ArrayList<Integer> adjustedPrices = new ArrayList<>();
@@ -278,7 +276,7 @@ private int increaseTargetPrice(Product product) {
                         .addGap(65, 65, 65))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnUpdateTPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(279, 279, 279))))
+                        .addGap(281, 281, 281))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,11 +309,11 @@ private int increaseTargetPrice(Product product) {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtBelowTarget, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))))
-                .addGap(83, 83, 83)
-                .addComponent(btnUpdateTPrice)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(118, 118, 118)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnUpdateTPrice)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -357,7 +355,6 @@ private int increaseTargetPrice(Product product) {
             
             product.updateProduct(product.getFloorPrice(), product.getCeilingPrice(), targetPrice);
         }
-        
         
     }//GEN-LAST:event_btnUpdateTPriceActionPerformed
 
