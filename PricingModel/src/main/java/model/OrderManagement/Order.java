@@ -24,7 +24,9 @@ public class Order {
     MarketChannelAssignment mca;
     String status;
 
-    public Order(){}
+    public Order(){
+        this.orderitems = new ArrayList<OrderItem>();
+    }
     
     public Order(CustomerProfile cp) {
         orderitems = new ArrayList();
@@ -43,11 +45,35 @@ public class Order {
         salesperson.addSalesOrder(this);  
     }
     
+    public ArrayList<OrderItem> getOrderitems() {
+        return orderitems;
+    }
+
+    public void setOrderitems(ArrayList<OrderItem> orderitems) {
+        this.orderitems = orderitems;
+    }
+    
     public OrderItem newOrderItem(Product p, int actualprice, int q) {
         OrderItem oi = new OrderItem(p, actualprice, q);
         orderitems.add(oi);
         return oi;
     }
+    
+    public void deleteItem(OrderItem item){
+        this.orderitems.remove(item);
+    }
+    
+
+    public OrderItem findProduct(Product product) {
+        
+        for (OrderItem order : orderitems){
+            if(order.getSelectedProduct().equals(product)){
+                return order;
+            }
+        }
+        return null;
+    }
+    
     //order total is the sumer of the order item totals
     public int getOrderTotal() {
         int sum = 0;
@@ -85,10 +111,13 @@ public class Order {
         else {return false;}
         
     }
-public void CancelOrder(){
-    status = "Cancelled";
-}
-public void Submit(){
-    status = "Submitted";
-}
+    
+    public void CancelOrder(){
+        status = "Cancelled";
+    }
+    
+    public void Submit(){
+        status = "Submitted";
+    }
+    
 }

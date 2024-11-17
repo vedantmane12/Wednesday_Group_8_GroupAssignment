@@ -34,7 +34,7 @@ public class Product {
         targetPrice = tp;
         orderitems = new ArrayList();
     }
-        public Product updateProduct(int fp, int cp, int tp) {
+    public Product updateProduct(int fp, int cp, int tp) {
         floorPrice = fp;
         ceilingPrice = cp;
         targetPrice = tp;
@@ -85,6 +85,20 @@ public class Product {
             sum = sum + oi.getOrderItemTotal();     //positive and negative values       
         }
         return sum;
+    }
+        
+        public int getTotalTargetPrice(){
+            int sum = 0;
+            
+            for(OrderItem oi : orderitems){
+                sum = sum + oi.getQuantity() * targetPrice;
+            }
+            
+            return sum;
+        }
+        
+    public String getName() {
+        return name;
     }
     public void setName(String n){
         name = n;

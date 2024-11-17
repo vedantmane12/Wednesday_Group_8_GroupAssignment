@@ -16,6 +16,10 @@ public class SupplierDirectory {
     public SupplierDirectory(){
         suppliers = new ArrayList();
     }
+    public ArrayList<Supplier> getSuppliers() {
+        return suppliers;
+    }
+
     public Supplier newSupplier(String n){
         Supplier supplier = new Supplier(n);
         suppliers.add(supplier);
@@ -30,6 +34,10 @@ public class SupplierDirectory {
         }
         return null;
     
+    }
+
+    public void removeSupplier(Supplier s) {
+        suppliers.remove(s);
     }
     
     public ArrayList<Supplier> getSuplierList(){

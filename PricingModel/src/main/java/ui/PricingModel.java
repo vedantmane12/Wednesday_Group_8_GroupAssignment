@@ -5,7 +5,6 @@
  */
 package ui;
 
-import java.util.ArrayList;
 import model.Business.Business;
 import model.Business.ConfigureABusiness;
 import model.CustomerManagement.CustomerDirectory;
@@ -19,8 +18,6 @@ import model.ProductManagement.Product;
 import model.ProductManagement.ProductCatalog;
 import model.Supplier.Supplier;
 import model.Supplier.SupplierDirectory;
-import ui.AdminWorkArea.AdminWorkArea;
-import ui.AdminWorkArea.ManageSupplier;
 
 /**
  *
@@ -38,11 +35,6 @@ public class PricingModel {
      
     //System.out.println(business.getSupplierDirectory().findSupplier("A").getProductCatalog().generatProductPerformanceReport());
     
-//    System.out.println(business.getCustomerDirectory().getCustomerList());
-    System.out.println(business.getSupplierDirectory().getSuplierList());
-
-//    AdminWork = new AdminWorkArea();
-
   }
 
 }

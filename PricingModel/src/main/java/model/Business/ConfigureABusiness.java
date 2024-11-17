@@ -35,9 +35,6 @@ public class ConfigureABusiness {
   public static Business initialize() {
     Business business = new Business("Xerox");
 
-    
-//   
-    
     SupplierDirectory supplierDirectory = business.getSupplierDirectory();
 
     Supplier supplier1 = supplierDirectory.newSupplier("A");
@@ -45,7 +42,11 @@ public class ConfigureABusiness {
     Supplier supplier3 = supplierDirectory.newSupplier("C");
     Supplier supplier4 = supplierDirectory.newSupplier("D");
     Supplier supplier5 = supplierDirectory.newSupplier("E");
+
     
+
+        
+
     ProductCatalog productCatalogA = supplierDirectory.findSupplier("A").getProductCatalog();
     ProductCatalog productCatalogB = supplierDirectory.findSupplier("B").getProductCatalog();
     ProductCatalog productCatalogC = supplierDirectory.findSupplier("C").getProductCatalog();
@@ -106,7 +107,11 @@ public class ConfigureABusiness {
     Product pE8 = productCatalogE.newProduct("Product E8", 8, 18, 13);
     Product pE9 = productCatalogE.newProduct("Product E9", 10, 20, 15);
     Product pE10 = productCatalogE.newProduct("Product E10", 5, 15, 10);
-        
+
+    
+
+    
+
     PersonDirectory personDirectory = business.getPersonDirectory();
     
     Person p1 = personDirectory.newPerson("Max");
@@ -187,9 +192,9 @@ public class ConfigureABusiness {
     OrderItem oiC150 = o1.newOrderItem(pE10, 15, 5);
     
     Order o2 = masterOrderList.newOrder(c2);
-    OrderItem oiC21 = o2.newOrderItem(pA1, 13, 2);
-    OrderItem oiC22 = o2.newOrderItem(pA2, 18, 1);
-    OrderItem oiC23 = o2.newOrderItem(pA3, 11, 3);
+    OrderItem oiC21 = o2.newOrderItem(pA1, 12, 2);
+    OrderItem oiC22 = o2.newOrderItem(pA2, 16, 1);
+    OrderItem oiC23 = o2.newOrderItem(pA3, 10, 3);
     OrderItem oiC24 = o2.newOrderItem(pA4, 14, 2);
     OrderItem oiC25 = o2.newOrderItem(pA5, 18, 4);
     OrderItem oiC26 = o2.newOrderItem(pA6, 13, 5);
@@ -239,9 +244,9 @@ public class ConfigureABusiness {
     OrderItem oiC250 = o2.newOrderItem(pE10, 11, 4);
 
     Order o3 = masterOrderList.newOrder(c3);
-    OrderItem oiC31 = o3.newOrderItem(pA1, 16, 2);
-    OrderItem oiC32 = o3.newOrderItem(pA2, 19, 1);
-    OrderItem oiC33 = o3.newOrderItem(pA3, 12, 3);
+    OrderItem oiC31 = o3.newOrderItem(pA1, 11, 2);
+    OrderItem oiC32 = o3.newOrderItem(pA2, 14, 1);
+    OrderItem oiC33 = o3.newOrderItem(pA3, 7, 3);
     OrderItem oiC34 = o3.newOrderItem(pA4, 15, 2);
     OrderItem oiC35 = o3.newOrderItem(pA5, 18, 4);
     OrderItem oiC36 = o3.newOrderItem(pA6, 13, 5);
@@ -291,9 +296,9 @@ public class ConfigureABusiness {
     OrderItem oiC350 = o3.newOrderItem(pE10, 11, 4);
     
     Order o4 = masterOrderList.newOrder(c4);
-    OrderItem oiC41 = o4.newOrderItem(pA1, 15, 3);
-    OrderItem oiC42 = o4.newOrderItem(pA2, 20, 2);
-    OrderItem oiC43 = o4.newOrderItem(pA3, 11, 5);
+    OrderItem oiC41 = o4.newOrderItem(pA1, 12, 3);
+    OrderItem oiC42 = o4.newOrderItem(pA2, 13, 2);
+    OrderItem oiC43 = o4.newOrderItem(pA3, 9, 5);
     OrderItem oiC44 = o4.newOrderItem(pA4, 14, 3);
     OrderItem oiC45 = o4.newOrderItem(pA5, 19, 2);
     OrderItem oiC46 = o4.newOrderItem(pA6, 12, 6);
@@ -343,9 +348,9 @@ public class ConfigureABusiness {
     OrderItem oiC450 = o4.newOrderItem(pE10, 12, 2);
 
     Order o5 = masterOrderList.newOrder(c5);
-    OrderItem oiC51 = o5.newOrderItem(pA1, 17, 4);
-    OrderItem oiC52 = o5.newOrderItem(pA2, 21, 1);
-    OrderItem oiC53 = o5.newOrderItem(pA3, 13, 6);
+    OrderItem oiC51 = o5.newOrderItem(pA1, 10, 4);
+    OrderItem oiC52 = o5.newOrderItem(pA2, 14, 1);
+    OrderItem oiC53 = o5.newOrderItem(pA3, 5, 6);
     OrderItem oiC54 = o5.newOrderItem(pA4, 16, 4);
     OrderItem oiC55 = o5.newOrderItem(pA5, 20, 3);
     OrderItem oiC56 = o5.newOrderItem(pA6, 14, 7);
@@ -654,8 +659,11 @@ public class ConfigureABusiness {
     OrderItem oiC1049 = o10.newOrderItem(pE9, 19, 4);
     OrderItem oiC1050 = o10.newOrderItem(pE10, 14, 3);
 
+
+    
     ProductCatalog pdA = supplierDirectory.findSupplier("B").getProductCatalog();
     
+
     return business;
 
   }

@@ -44,9 +44,13 @@ public class MasterOrderList {
         
     return masterorderreport;
         
-}
+    }
 
-public int getSalesVolume(){
+    public void addNewOrder(Order order){
+        this.orders.add(order);
+    }
+
+    public int getSalesVolume(){
 
 int sum = 0;
 for(Order order: orders){

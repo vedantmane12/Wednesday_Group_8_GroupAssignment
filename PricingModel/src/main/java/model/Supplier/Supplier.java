@@ -50,8 +50,7 @@ public class Supplier {
     
     //update supplier product ...
     @Override
-   
-    public String toString(){
+     public String toString(){
        return name;
        
    }
