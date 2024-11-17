@@ -44,6 +44,18 @@ public class Product {
     public void addOrderItem(OrderItem oi){     
         orderitems.add(oi);
     }
+    
+    public double avgActualPrice() {
+    int s = 0;
+    int no = 0;
+    for (OrderItem oi : orderitems) {
+        s += oi.getActualPrice();
+        no = no + 1;
+    }
+    System.out.println(s + " " + no + " " + ((double) s / no));
+    return (double) s / no;
+}
+    
     //Number of item sales above target 
     public int getNumberOfProductSalesAboveTarget(){
         int sum = 0;
