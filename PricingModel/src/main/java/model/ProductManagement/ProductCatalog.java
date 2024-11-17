@@ -17,7 +17,7 @@ public class ProductCatalog {
     ArrayList<Product> products; //list of products initially empty
 
     public ProductCatalog(String n) {
-        type = n;
+         type = n;
          products = new ArrayList();  ///create the list of elements otherwise it is null
     }
 // new ProductCatalog(); or new ProductCatalog("Printers");
@@ -36,6 +36,10 @@ public class ProductCatalog {
         return p;
     }
 
+    public void removeProduct(Product p) {
+        products.remove(p);
+    }
+
     public ProductsReport generatProductPerformanceReport() {
         ProductsReport productsreport = new ProductsReport();
 
@@ -51,4 +55,13 @@ public class ProductCatalog {
         return products;
     }
 
+    public Product searchProduct(String id) {
+        for (Product product : products) {
+            if (product.getName().contains(id)) {
+                return product;
+            }
+        }
+        return null;
+    }
+    
 }

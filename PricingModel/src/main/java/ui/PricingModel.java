@@ -18,8 +18,6 @@ import model.ProductManagement.Product;
 import model.ProductManagement.ProductCatalog;
 import model.Supplier.Supplier;
 import model.Supplier.SupplierDirectory;
-import ui.AdminWorkArea.AdminWorkArea;
-import ui.AdminWorkArea.ManageSupplier;
 
 /**
  *
@@ -37,14 +35,6 @@ public class PricingModel {
      
     //System.out.println(business.getSupplierDirectory().findSupplier("A").getProductCatalog().generatProductPerformanceReport());
     
-<<<<<<< HEAD
-=======
-//    System.out.println(business.getCustomerDirectory().getCustomerList());
-    System.out.println(business.getSupplierDirectory().getSuplierList());
-
-//    AdminWork = new AdminWorkArea();
->>>>>>> origin/main
-
   }
 
 }

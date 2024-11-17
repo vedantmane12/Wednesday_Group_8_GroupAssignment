@@ -17,6 +17,8 @@ public class ProductSummary {
     int numberofsalesbelowtarget;
     int productpriceperformance; //total profit above target --could be negative too
     int acutalsalesvolume;
+    int targetPrice;
+    int totalTargetPrice;
     int rank; // will be done later
     
     public ProductSummary(Product p){
@@ -25,6 +27,8 @@ public class ProductSummary {
         productpriceperformance = p.getOrderPricePerformance();
         subjectproduct = p; //keeps track of the product itself not as well;
         acutalsalesvolume = p.getSalesVolume();
+        totalTargetPrice = p.getTotalTargetPrice();
+        targetPrice = p.getTargetPrice();
         numberofsalesbelowtarget = p.getNumberOfProductSalesBelowTarget();
     
     }
@@ -43,6 +47,13 @@ public class ProductSummary {
     }            
     public boolean isProductAlwaysAboveTarget(){
         return false; // to be implemented
+    }
+    public int getTargetPrice() {
+        return targetPrice;
+    }
+
+    public int getTotalTargetPrice() {
+        return totalTargetPrice;
     }
     
      @Override

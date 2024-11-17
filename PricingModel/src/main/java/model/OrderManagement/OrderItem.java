@@ -41,7 +41,7 @@ public class OrderItem {
     }
 
     public boolean isActualAboveTarget() {
-        if (actualPrice > selectedproduct.getTargetPrice()) {
+        if (actualPrice >= selectedproduct.getTargetPrice()) {
             return true;
         } else {
             return false;
@@ -79,4 +79,13 @@ public class OrderItem {
         return quantity;
     }
     
+    public void setQuantity(int q) {
+        this.quantity = q;
+    }
+
+    @Override
+    public String toString() {
+        return this.selectedproduct.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
