@@ -538,7 +538,7 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
         
         for (Supplier s: supplierDirectory.getSuppliers()){
             for (Product p : s.getProductCatalog().getProductList()) {
-                if(p.getName().equalsIgnoreCase(keyword)){
+                if(p.getName().toLowerCase().contains(keyword.toLowerCase())){
                     Object row[] = new Object[4];
                     row[0] = p;
                     row[1] = p.getFloorPrice();

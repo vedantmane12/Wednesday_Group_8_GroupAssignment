@@ -152,6 +152,7 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
 
         //txtId.setEditable(true);
         txtFloorPrice.setEditable(true);
+        txtCeilPrice.setEditable(true);
         txtPrice.setEditable(true);
         btnSave.setEnabled(true);
 }//GEN-LAST:event_btnUpdateActionPerformed

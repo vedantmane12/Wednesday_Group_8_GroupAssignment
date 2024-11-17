@@ -131,9 +131,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtName">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblProductFloorPrice">
       <Properties>
@@ -141,9 +138,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFloorPrice">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblProductPrice">
       <Properties>
@@ -151,14 +145,8 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPrice">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCeilPrice">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblProductCeilPrice">
       <Properties>

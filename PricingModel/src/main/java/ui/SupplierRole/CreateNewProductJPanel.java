@@ -59,17 +59,9 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
 
         lblProductName.setText("Product Name:");
 
-        txtName.setEditable(false);
-
         lblProductFloorPrice.setText("Product Floor Price:");
 
-        txtFloorPrice.setEditable(false);
-
         lblProductPrice.setText("Product Price:");
-
-        txtPrice.setEditable(false);
-
-        txtCeilPrice.setEditable(false);
 
         lblProductCeilPrice.setText("Product Ceiling Price:");
 
